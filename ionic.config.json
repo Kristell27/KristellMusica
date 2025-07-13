@@ -1,0 +1,7 @@
+{
+  "name": "KristellMusica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
