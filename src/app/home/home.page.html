@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Home Page
+      KristellMusica
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,6 +11,7 @@
   pagination="true"
   loop="true"
   slides-per-view="1">
+
     
     <swiper-slide *ngFor="let genre of genres">
       <div class="slide-content1">
@@ -21,4 +22,15 @@
     
     </swiper-slide>
   </swiper-container>
+
+
+  <ion-button 
+      expand="block" 
+      fill="outline" 
+      color="medium" 
+      (click)="showIntroAgain()"
+      class="smooth-transition">
+      <ion-icon name="refresh-outline" slot="start"></ion-icon>
+      Ver Introducción Nuevamente
+    </ion-button>
 </ion-content>

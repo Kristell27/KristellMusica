@@ -33,7 +33,13 @@ export class HomePage {
       description: "La Bachata  es un género musical y baile originario de la República Dominicana, considerado su baile nacional. Es muy popular por su ritmo rápido, pegadizo y sus pasos sencillos, lo que lo convierte en uno de los bailes latinos más accesibles y alegres para aprender."
     },
   ]
-  
+  storage: any;
+async showIntroAgain() {
+    // Borrar del Storage la variable que indica que ya se vio la intro
+    await this.storage.remove('introSeen');
+    // Recargar la página de intro
+    window.location.reload();
+  }
   constructor() {}
 }
 

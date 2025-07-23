@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar [class.dark-theme]="isDarkTheme" class="ion-no-border">
+    <ion-title class="gradient-text ion-text-center">
+      KristellMusica
+    </ion-title>
+    
+    <!-- Botón para cambiar tema -->
+    <ion-button 
+      slot="end" 
+      fill="clear" 
+      (click)="toggleTheme()"
+      class="ion-margin-end smooth-transition">
+      <ion-icon name="color-palette-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [class.dark-theme]="isDarkTheme" class="ion-padding-top">
+  
+  <!-- Slides dinámicos usando Swiper -->
+  <swiper-container 
+    [pagination]="true" 
+    [space-between]="20" 
+    [centered-slides]="true"
+    class="intro-slides"
+    (swiperslidechange)="onSlideChange($event)">
+    
+    <swiper-slide *ngFor="let slide of slides; let i = index" [class]="getSlideClass(slide)">
+      <div class="slide-content fade-in-up">
+        
+        <!-- Icono del slide -->
+        <div class="slide-icon ion-margin-bottom pulse-animation">
+          <ion-icon [name]="slide.icon" size="large"></ion-icon>
+        </div>
+        
+        <!-- slide -->
+        <ion-card class="slide-card hover-lift smooth-transition ion-no-margin">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="ion-color-primary">
+              {{ slide.title }}
+            </ion-card-title>
+          </ion-card-header>
+          
+          <ion-card-content class="ion-padding">
+            <p class="ion-text-center slide-text ion-margin-bottom">
+              {{ slide.content }}
+            </p>
+            
+            <!-- Indicador de progreso -->
+            <div class="progress-indicator ion-margin-top">
+              <div class="progress-dots ion-text-center">
+                <span 
+                  *ngFor="let dot of slides; let j = index" 
+                  class="progress-dot"
+                  [class.active]="i === currentSlideIndex">
+                </span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        
+      </div>
+    </swiper-slide>
+    
+  </swiper-container>
+  
+  <!-- Botones de navegación -->
+  <div class="navigation-buttons ion-padding glass-effect">
+    
+    <!-- Home -->
+    <ion-button 
+      expand="block" 
+      class="button-gradient ion-margin-bottom smooth-transition hover-lift"
+      (click)="goToHome()">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      Comenzar mi Experiencia Musical
+    </ion-button>
+    
+    
+    <ion-button 
+      expand="block" 
+      fill="outline" 
+      color="medium" 
+      (click)="showIntroAgain()"
+      class="smooth-transition">
+      <ion-icon name="refresh-outline" slot="start"></ion-icon>
+      Ver Introducción Nuevamente
+    </ion-button>
+    
+  </div>
+  
+</ion-content>
+

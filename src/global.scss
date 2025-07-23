@@ -35,3 +35,150 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+/* Estilos globales personalizados para KristellMusica */
+
+/* Variables CSS personalizadas */
+:root {
+  --app-primary-gradient: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  --app-secondary-gradient: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  --app-success-gradient: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+  --app-border-radius: 12px;
+  --app-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --app-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --app-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tema oscuro personalizado */
+body.dark {
+  --app-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --app-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Utilidades CSS personalizadas */
+.gradient-text {
+  background: var(--app-primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.smooth-transition {
+  transition: var(--app-transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--app-shadow-hover);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Mejoras para componentes Ionic */
+ion-button {
+  --border-radius: var(--app-border-radius);
+  --transition: var(--app-transition);
+  font-weight: 600;
+  
+  &.button-gradient {
+    --background: var(--app-primary-gradient);
+    --color: white;
+  }
+  
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+ion-card {
+  --border-radius: var(--app-border-radius);
+  box-shadow: var(--app-shadow);
+  transition: var(--app-transition);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--app-shadow-hover);
+  }
+}
+
+ion-slides {
+  --bullet-background: var(--ion-color-primary);
+  --bullet-background-active: var(--ion-color-secondary);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states mejorados */
+ion-button:focus,
+ion-card:focus {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ion-color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ion-color-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ion-color-primary);
+}
+

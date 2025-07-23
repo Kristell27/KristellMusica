@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { Storage } from '@ionic/storage-angular';
 import { register } from 'swiper/element/bundle';
 
 register();
-
 
 @Component({
   selector: 'app-root',
@@ -11,5 +11,12 @@ register();
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private storage: Storage) {
+    this.initStorage();
+  }
+
+  async initStorage() {
+    await this.storage.create();
+  }
 }
+
