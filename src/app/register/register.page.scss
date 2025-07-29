@@ -1,14 +1,14 @@
-.login-content {
-  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.register-content {
+  --background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   
-  .login-container {
+  .register-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     position: relative;
     
     &::before {
@@ -18,72 +18,72 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23music)"/></svg>');
-      opacity: 0.3;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" patternUnits="userSpaceOnUse" width="25" height="25"><path d="M12.5,8 C15,5 20,5 22.5,8 C20,5 25,5 27.5,8 C25,12 22.5,15 20,20 C17.5,15 15,12 12.5,8 Z" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+      opacity: 0.4;
     }
   }
 
   .header-section {
     text-align: center;
-    margin-bottom: 40px;
+    margin: 20px 0 30px 0;
     z-index: 1;
     
     .logo-container {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       
       .logo-icon {
-        font-size: 80px;
+        font-size: 70px;
         color: #ffffff;
         filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-        animation: float 3s ease-in-out infinite;
+        animation: bounce 2s ease-in-out infinite;
       }
     }
     
     .welcome-title {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: #ffffff;
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
       font-family: 'Poppins', sans-serif;
     }
     
     .welcome-subtitle {
-      font-size: 16px;
+      font-size: 14px;
       color: rgba(255, 255, 255, 0.9);
       margin: 0;
       font-weight: 300;
     }
   }
 
-  .login-form {
+  .register-form {
     width: 100%;
     max-width: 400px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 25px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 35px 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     backdrop-filter: blur(10px);
     z-index: 1;
     
     .input-group {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       
       .custom-input {
-        --background: #f8f9ff;
+        --background: #fef7ff;
         --border-radius: 15px;
         --border-width: 2px;
-        --border-color: #e1e5f2;
+        --border-color: #f3e8ff;
         --color: #2d3748;
         --placeholder-color: #a0aec0;
         border-radius: 15px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         transition: all 0.3s ease;
         
         &:hover {
-          --border-color: #b794f6;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(183, 148, 246, 0.15);
+          --border-color: #f093fb;
+          transform: translateY(-1px);
+          box-shadow: 0 6px 20px rgba(240, 147, 251, 0.15);
         }
         
         &.error {
@@ -92,23 +92,23 @@
         }
         
         .input-icon {
-          color: #b794f6;
+          color: #f093fb;
           margin-right: 10px;
-          font-size: 20px;
+          font-size: 18px;
         }
         
         .custom-input-field {
           --color: #2d3748;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 500;
         }
         
         .password-toggle {
-          --color: #b794f6;
+          --color: #f093fb;
           margin: 0;
           
           ion-icon {
-            font-size: 20px;
+            font-size: 18px;
           }
         }
       }
@@ -118,36 +118,36 @@
           display: flex;
           align-items: center;
           color: #e53e3e;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 500;
-          margin-top: 5px;
+          margin-top: 4px;
           animation: slideIn 0.3s ease;
           
           .error-icon {
-            font-size: 14px;
-            margin-right: 5px;
+            font-size: 12px;
+            margin-right: 4px;
           }
         }
       }
     }
     
-    .login-button {
-      --background: linear-gradient(135deg, #b794f6 0%, #9f7aea 100%);
-      --background-activated: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+    .register-button {
+      --background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --background-activated: linear-gradient(135deg, #f5576c 0%, #e91e63 100%);
       --border-radius: 15px;
-      --box-shadow: 0 8px 25px rgba(183, 148, 246, 0.3);
+      --box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
       --color: white;
-      height: 55px;
-      font-size: 16px;
+      height: 50px;
+      font-size: 15px;
       font-weight: 600;
-      margin: 30px 0 20px 0;
+      margin: 25px 0 15px 0;
       text-transform: none;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       
       &:hover {
         transform: translateY(-2px);
-        --box-shadow: 0 12px 35px rgba(183, 148, 246, 0.4);
+        --box-shadow: 0 12px 35px rgba(240, 147, 251, 0.4);
       }
       
       &:disabled {
@@ -158,30 +158,30 @@
       }
       
       ion-icon {
-        margin-right: 8px;
-        font-size: 18px;
+        margin-right: 6px;
+        font-size: 16px;
       }
     }
     
-    .register-section {
+    .login-section {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
       
-      .register-text {
+      .login-text {
         color: #718096;
-        font-size: 14px;
-        margin: 0 0 10px 0;
+        font-size: 13px;
+        margin: 0 0 8px 0;
       }
       
-      .register-link {
-        --color: #b794f6;
-        font-size: 14px;
+      .login-link {
+        --color: #f093fb;
+        font-size: 13px;
         font-weight: 600;
         text-transform: none;
         margin: 0;
         
         &:hover {
-          --color: #9f7aea;
+          --color: #f5576c;
         }
       }
     }
@@ -189,19 +189,22 @@
 }
 
 // Animaciones
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  50% {
+  40% {
     transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -211,22 +214,24 @@
 
 // Responsive design
 @media (max-width: 480px) {
-  .login-content {
-    .login-container {
+  .register-content {
+    .register-container {
       padding: 15px;
       
-      .login-form {
-        padding: 30px 20px;
-        margin: 0 10px;
+      .register-form {
+        padding: 25px 20px;
+        margin: 0 5px;
       }
       
       .header-section {
+        margin: 15px 0 25px 0;
+        
         .logo-icon {
-          font-size: 60px;
+          font-size: 55px;
         }
         
         .welcome-title {
-          font-size: 28px;
+          font-size: 24px;
         }
       }
     }

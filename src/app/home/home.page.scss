@@ -19,3 +19,23 @@
 }
 
 
+
+// Estilos para el botón de logout
+.logout-btn {
+  --color: #ffffff;
+  --background: transparent;
+  --border-radius: 50%;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  
+  ion-icon {
+    font-size: 20px;
+  }
+  
+  &:hover {
+    --background: rgba(255, 255, 255, 0.1);
+  }
+}
+
